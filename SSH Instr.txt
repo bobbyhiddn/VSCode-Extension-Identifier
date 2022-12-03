@@ -1,0 +1,24 @@
+1. Navigate to whatever directory you want to save the SSH key to.
+2. Open Git Bash
+$ ssh-keygen -t rsa -b 4096 -C "mlmicahlongmire@gmail.com"
+Name the key and set a passphrase. (In this case, TheTome & TheTome.pub)
+cat TheTome.pub
+3. Copy all the contents and navigate to here: https://github.com/settings/keys
+4. Add the key to your SSH keys.
+5. ssh-add.exe the private key and enter the passphrase.
+ssh-add.exe /d/Keys/.ssh/id_rsa/TheTome
+Test using ssh -T git@github.
+It should return: Hi bobbyhiddn! You've successfully authenticated, but GitHub does not provide shell access.
+
+Now, we need to get our repo publishing:
+
+First, initialize a git repo in the directory of your choice:
+git init
+git add "File.name"
+git commit -m "First commit"
+git branch -m main
+Create a repository in github and find the url, for example: git@github.com:bobbyhiddn/Test.git
+Now add it as a remote:
+git remote add origin git@github.com:bobbyhiddn/Test.git
+And push your master/main branch to it: 
+git push -u origin main
