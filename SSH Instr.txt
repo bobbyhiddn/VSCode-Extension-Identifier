@@ -6,9 +6,11 @@ cat TheTome.pub
 3. Copy all the contents and navigate to here: https://github.com/settings/keys
 4. Add the key to your SSH keys.
 5. ssh-add.exe the private key and enter the passphrase.
-eval `ssh-agent -s` - Turns on ssh-add
+6. Turn on ssh-add
+eval `ssh-agent -s`
+7. Add your key.
 ssh-add.exe /d/Keys/.ssh/TheTome
-Test using ssh -T git@github.
+8. Test using 'ssh -T git@github.'
 It should return: Hi bobbyhiddn! You've successfully authenticated, but GitHub does not provide shell access.
 
 Now, we need to get our repo publishing:
